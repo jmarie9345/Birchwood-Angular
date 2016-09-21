@@ -1,0 +1,22 @@
+{
+  "name": "angular-starter",
+  "version": "1.0.0",
+  "description": "Angular Starter Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulberesuita/angular-starter.git"
+  },
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-route": "1.5.x",
+    "angular-ui-router": "1.0.0-alpha.5",
+    "bootstrap": "3.3.x",
+    "jquery": "^2.2.x"
+  },
+  "author": "Paul Beresuita <paul.beresuita@gmail.com>",
+  "license": "ISC"
+}
