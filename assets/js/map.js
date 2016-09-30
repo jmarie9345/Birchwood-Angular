@@ -12,3 +12,5 @@ function initMap() {
           title: 'Our Location'
         });
       }
+
+      object.addEventListener("load", initMap);
