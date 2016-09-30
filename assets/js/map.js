@@ -4,14 +4,11 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: myLatLng
-          });
+        });
 
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
           title: 'Our Location'
-          });
-
+        });
       }
-
-      google.maps.event.addDomListener(window, "load", initMap);
