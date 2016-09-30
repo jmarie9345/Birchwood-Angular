@@ -1,1 +1,280 @@
-<h1>My Dashboard</h1>
+ <div id="wrapper">
+                       
+
+        <!-- Sidebar Navigation -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a >
+                        Navigation 
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#account">Account</a>
+                </li>
+                <li>
+                    <a href="#documents">Documents</a>
+                </li>
+               
+                <li>
+                    <a href="#">Messages</a>
+                </li>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Community Bulletin Board</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+     
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+
+                <!-- Top Header-->
+
+                <div class="page-header">
+                    <h1> Birchwood Estates West </h1>
+                    <p>Welcome [resident's name]!</p>
+                </div>
+                <!-- end top header -->
+
+<br> 
+
+
+ 
+                <!-- Payments-->
+
+                   
+                    <h2 id="account"> Account Status </h2>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-md-offset-1">
+
+
+
+                        <i class="fa fa-dollar" style="font-size: 32pt;"></i> 
+
+                        <h3 style="display: inline-block">Your current balance is [$X}</h3>
+                        </div>
+
+
+
+                        <div class="col-md-3">
+                        <button class="btn-danger btn-lg" > Make a Payment</button>
+                        </div>
+
+                      
+                    </div>
+
+
+                </div>
+
+                <br> <br>
+
+                <div class="container" >
+                <h2>Payment History</h2>
+                <p>The following table reflects your payment history. Please note it can take 3-5 Business days for your payment to be reflected in the system</p>
+                 <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Item</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Balance Due</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr> <!-- should be imported from database -->
+                        <td>1/1/2017</td>
+                        <td>Monthly Rent</td>
+                        <td>$450</td>
+                        <td>-$450</td>
+                        <td>$0</td> <!-- should be a calculation -->
+                      </tr>
+                      <tr> <!-- should be imported from database -->
+                        <td>1/1/2017</td>
+                        <td>Monthly Rent</td>
+                        <td>$450</td>
+                        <td>-$450</td>
+                        <td>$0</td> <!-- should be a calculation -->
+                      </tr>
+                      <tr> <!-- should be imported from database -->
+                        <td>1/1/2017</td>
+                        <td>Monthly Rent</td>
+                        <td>$450</td>
+                        <td>-$450</td>
+                        <td>$0</td> <!-- should be a calculation -->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+<br> <br>
+                <!-- End Payments-->
+
+
+
+                <!-- Documents -->
+                <div class="container" id="documents">
+
+                <h2>Documents</h2>
+
+                <button class="btn-info btn-lg"> Lease Agreement </button>
+                <button class="btn-info btn-lg"> Community Rules </button>
+                <button class="btn-info btn-lg"> Lawn/Snow Schedules </button>
+                <button class="btn-info btn-lg"> Service Providers </button>
+                
+
+
+                </div>
+
+
+<br> <br>
+                <!-- End Documents --> 
+
+                <!-- Community Bulletin Board -->
+                <div class="container" id="commBoard">
+
+                <h2>Community Bulletin Board</h2>
+
+                <!-- for sale modal -->
+                
+                <button id="forSale"> For Sale </button>
+
+                <div id="forSaleModal" class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content modal-sm">
+                   
+                    <span class="close">x</span>
+
+                    <div class="row">
+
+
+                        <div class="col-sm-12">
+                        <h2>For Sale</h2>
+                        <h3>Resident Postings</h3>
+                        </div><!-- /col-sm-12 -->
+
+                    </div><!-- /row -->
+
+                    <div class="row">
+                        <div class="col-sm-1">
+                        <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-5">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                        <strong>username</strong> <span class="text-muted">commented 5 days ago</span>
+                        </div>
+                        <div class="panel-body">
+                        Panel content
+                        </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+                    </div><!-- /row -->
+
+                <!-- post 2 -->
+                 <div class="row">
+                        <div class="col-sm-1">
+                        <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-5">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                        <strong>username</strong> <span class="text-muted">commented 5 days ago</span>
+                        </div>
+                        <div class="panel-body">
+                        Panel content
+                        </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+
+                    </div><!-- /row -->
+
+                <!-- new post form -->
+                 <div class="row">
+                        <div class="col-sm-1">
+                        <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                        </div><!-- /thumbnail -->
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-5">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                        <strong>myusername</strong> 
+                        </div>
+                        <div class="panel-body">
+                       <textarea placeholder="Enter your message here"></textarea>
+
+                        <button id="post">Send Message</button>
+
+                        </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
+
+                        
+
+                </div><!-- /row -->
+                <!-- end new post form -->
+
+
+
+
+
+
+
+
+                  </div> <!-- end module content -->
+
+                </div>
+               
+                <!-- END for sale modal -->
+
+                </div>
+
+                <!-- End Community Bulletin Board --> 
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+   
+
+
+    </div>
+    <!-- /#wrapper -->
+
+  
+<!-- JS -->
+    <!-- <script type="text/javascript" src="js/forSaleMessageBox.js"></script><!-- message box js --> -->

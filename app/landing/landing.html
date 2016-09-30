@@ -46,6 +46,7 @@
 
 
                         <li><a href="#contactUs">Contact Us</a></li>
+                          <li><a data-toggle="modal" data-target="#myModal">Log in</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -53,6 +54,7 @@
         </nav>
     </header>
     <!-- /HEADER -->
+
 
 
     <!-- SLIDER -->
@@ -424,6 +426,9 @@
 
      <div id = "bewMap" > </div>
 
+
+
+
     <!-- FOOTER -->
     <footer id="footer">
         <div class="container">
@@ -450,3 +455,48 @@
     <div class="scroll-up">
         <ul><li><a href="#header"><i class="fa fa-angle-up"></i></a></li></ul>
     </div>
+
+<!-- all my modals -->
+
+    <!-- login Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Birchwood Estates West</h4>
+      </div>
+      <div class="modal-body" style="padding-top:0; padding-bottom:0;">
+    
+<!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12" style="padding:0">
+            <div class="account-wall">
+               <h1 class="text-center login-title">Sign in </h1> <br>
+               
+                <form class="form-signin">
+                <input type="text" class="form-control" placeholder="Email" required autofocus>
+                <input type="password" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" ui-sref="dashboard" data-dismiss="modal">
+                    Sign in</button>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <!-- <a href="#" class="text-center new-account">Create an account </a> -->
+        </div>
+    </div>
+<!-- </div> -->
+
+
+
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
