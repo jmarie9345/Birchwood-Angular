@@ -4,13 +4,18 @@
 
     angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 
-        $urlRouterProvider.otherwise("/main");
+        $urlRouterProvider.otherwise("/landing");
 
         $stateProvider
-            .state('main', {
-                url: "/main",
-                templateUrl: "app/main/main.html",
-                controller: 'MainController'
+            .state('landing', {
+                url: "/landing",
+                templateUrl: "app/landing/landing.html",
+                controller: 'LandingController'
+            })
+            .state('dashboard', {
+                url: "/dashboard",
+                templateUrl: "app/dashboard/dashboard.html",
+                controller: 'DashboardController'
             })
 
     });
