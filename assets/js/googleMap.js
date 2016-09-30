@@ -13,3 +13,5 @@ function initMap() {
                  map: map,
           });
     }
+
+    google.maps.event.addDomListener(window, "load", initialize);
