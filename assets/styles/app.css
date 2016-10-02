@@ -63,3 +63,5 @@ ul.draggable-objects:after{
     position: relative;
     z-index: 2;
 }
+
+.angular-google-map-container { height: 400px; }

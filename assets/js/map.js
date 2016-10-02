@@ -13,4 +13,4 @@ function initMap() {
         });
       }
 
-      object.addEventListener("load", initMap);
+      // window.addEventListener("load", initMap);
