@@ -1,4 +1,4 @@
-.controller('LoginController', function($scope, $state, $uibModalInstance) {
+/*.controller('LoginController', function($scope, $state, $uibModalInstance) {
 
     $scope.loginSubmit = function(){
         $state.go('member_home');

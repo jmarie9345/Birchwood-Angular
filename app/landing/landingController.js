@@ -49,6 +49,6 @@
 		    storageBucket: "test-d3cea.appspot.com", 
 		    messagingSenderId: "376630577028"
 		  };
-		  firebase.initializeApp(config);
+		  firebase.initializeApp(config); */
 
 
