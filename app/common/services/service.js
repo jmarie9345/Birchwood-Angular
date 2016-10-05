@@ -4,7 +4,7 @@
 
     angular.module('app').factory('authorService', function() {
 
-        .$scope.name = "Jackie";
+        var name = "Jackie";
         return name;
 
     });
