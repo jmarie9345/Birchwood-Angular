@@ -39,7 +39,7 @@
 		    };
 
 
-})();		
+});		
 
 		/* Initialize Firebase
 		 var config = {
