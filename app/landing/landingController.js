@@ -32,10 +32,10 @@
 		            labelContent: "lat: " + $scope.marker.coords.latitude + ' ' + 'lon: ' + $scope.marker.coords.longitude,
 		            labelAnchor: "100 0",
 		            labelClass: "marker-labels"
-		          };
-		        };
-		      };
-		    };
+		          }
+		        }
+		      }
+		    }
 
 
 
