@@ -39,4 +39,16 @@
 		    };
 
 
+		    
+		// Initialize Firebase
+		 var config = {
+		    piKey: "AIzaSyDSCXu8esxECHnAImamHddP4g28qpNIkd4",
+		    authDomain: "test-d3cea.firebaseapp.com",
+		    databaseURL: "https://test-d3cea.firebaseio.com",
+		    storageBucket: "test-d3cea.appspot.com", 
+		    messagingSenderId: "376630577028"
+		  };
+		  firebase.initializeApp(config);
+
+
 })();
