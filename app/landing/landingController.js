@@ -7,9 +7,10 @@
 
     function LandingController($scope, $rootScope, authorService) {
 
-    	$scope.inputPassword = "";
+    	$scope.txtPassword = "";
+    	$scope.txtEmail = "";
     	$scope.name = authorService;
-        $scope.map = { center: { latitude: 43.033980, longitude: -82.464194 }, zoom: 10 };
+        $scope.map = { center: { latitude: 43.033980, longitude: -82.464194 }, zoom: 4 };
     
 		$scope.marker = {
 		      id: 0,
