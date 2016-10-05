@@ -2,9 +2,9 @@
 
     'use strict';
 
-    angular.module('app').factory('authorService', function(authorService) {
+    angular.module('app').factory('authorService', function() {
 
-        var name = "Jackie";
+        .$scope.name = "Jackie";
         return name;
 
     });
