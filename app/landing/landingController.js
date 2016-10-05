@@ -39,8 +39,9 @@
 		    };
 
 
-		    
-		// Initialize Firebase
+})();		
+
+		/* Initialize Firebase
 		 var config = {
 		    piKey: "AIzaSyDSCXu8esxECHnAImamHddP4g28qpNIkd4",
 		    authDomain: "test-d3cea.firebaseapp.com",
@@ -51,4 +52,3 @@
 		  firebase.initializeApp(config);
 
 
-})();
