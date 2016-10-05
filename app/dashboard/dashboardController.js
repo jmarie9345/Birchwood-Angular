@@ -9,10 +9,15 @@
 
     	$scope.name = authorService;
 
+    	$scope.loginSubmit = function (){
+    		    $state.go('member_home');
+		        $uibModalInstance.close();
+    	}
+		
+		
     };
 
+    
 
-   
 
-
-});
+})();
