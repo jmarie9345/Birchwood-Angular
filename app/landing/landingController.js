@@ -33,9 +33,9 @@
 		            labelAnchor: "100 0",
 		            labelClass: "marker-labels"
 		          };
-		        }
-		      }
-		    };
+		        };
+		      };
+		  
 		    };
 
 
