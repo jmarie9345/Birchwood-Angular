@@ -2,7 +2,13 @@
 
     'use strict';
 
-    angular.module('app').config(function($stateProvider, $urlRouterProvider) {
+    angular.module('app')
+    .run(function($rootScope){
+        $rootScope.firstName="jackie";
+        $rootScope.lastName="";
+        $rootScope.userIsLoggedIn=false;
+    })
+    .config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise("/landing");
 

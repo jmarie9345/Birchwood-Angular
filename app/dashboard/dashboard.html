@@ -29,6 +29,10 @@
                 <li>
                     <a href="#">Community Bulletin Board</a>
                 </li>
+                 <li>
+                    <a ng-click="logOut()">log out</a>
+                </li>
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -50,12 +54,17 @@
 
 <br> 
 
+<!-- messages -->
+
 
  
                 <!-- Payments-->
 
                    
                     <h2 id="account"> Account Status </h2>
+                        <div ng-repeat="(key, value) in messages"> 
+                        {{value}}
+                        </div>
                     <br>
 
                     <div class="row">
@@ -121,6 +130,7 @@
                     </tbody>
                   </table>
                 </div>
+}
 
 <br> <br>
                 <!-- End Payments-->

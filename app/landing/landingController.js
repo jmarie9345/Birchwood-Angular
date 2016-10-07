@@ -6,9 +6,10 @@
 
 
     function LandingController($scope, $rootScope, authorService) {
+    	console.log("$rootScope firstName" + $rootScope.firstName);
+    	$scope.txtPassword = "";
+    	$scope.txtEmail = "";
 
-    	// $scope.txtPassword = "";
-    	// $scope.txtEmail = "";
     	$scope.name = authorService;
 
         $scope.map = { center: { latitude: 43.033980, longitude: -82.464194 }, zoom: 14 };
@@ -37,6 +38,26 @@
 		        }
 		      }
 		}
+
+		$scope.signIn = function(){
+			firebase.auth().signInWithEmailAndPassword($scope.txtEmail, $scope.txtPassword)
+			.then(function(){
+				console.log("successful signup!");
+				$rootScope.userIsLoggedIn=true;
+			})
+			.catch(function(error) {
+			// Handle Errors here.
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			console.log("error code" + errorCode);
+			console.log("error message" + errorMessage);
+
+			  // ...
+			});
+
+		}
+
+
 	}
 
 
