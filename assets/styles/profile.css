@@ -31,3 +31,8 @@
 .toppad
 {margin-top:20px;
 }
+
+.img-circle {
+	height:160px;
+	width:160px;
+}
