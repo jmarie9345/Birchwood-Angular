@@ -16,3 +16,44 @@
     padding-right: 10px;
 
 }
+
+.page-header {
+	margin: 0px;
+	padding:0px 10px 0px 10px;
+}
+
+.container{
+	width:100%;
+}
+
+.container-fluid {
+	margin: 0px;
+	padding:0px 10px 0px 10px;
+	overflow:hidden;
+}
+
+#page-content-wrapper{
+
+	margin: 0px;
+	padding:0px 10px 0px 10px;
+
+}
+
+.panel {
+
+	margin: 0px;
+	padding:0px;
+	
+}
+
+
+
+/* Profile */
+
+#profileImage{
+	height: 160px;
+	width:160px;
+	border:solid;
+}
+ 
+

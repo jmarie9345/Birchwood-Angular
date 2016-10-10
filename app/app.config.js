@@ -23,6 +23,12 @@
                 templateUrl: "app/dashboard/dashboard.html",
                 controller: 'DashboardController'
             })
+            .state('profile', {
+                url: "/profile",
+                templateUrl: "app/profile/profile.html",
+                controller: 'profileController'
+            })
+            
 
     });
 
