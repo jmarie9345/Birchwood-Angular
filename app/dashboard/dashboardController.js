@@ -1,82 +1,84 @@
-(function() {
+// (function() {
 
-    'use strict';
+//     'use strict';
 
-    angular.module('app').controller('DashboardController', DashboardController);
+//     angular.module('app').controller('DashboardController', DashboardController);
 
 
-    function DashboardController($scope, $rootScope, authorService, $state) {
+//     function DashboardController($scope, $rootScope, authorService, $state, $location, $anchorScroll) {
 
-        $scope.messages={};
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-               console.log("$rootScope firstName" + $rootScope.firstName);
-                $scope.name = authorService;
 
-                $scope.loginSubmit = function (){
-                        $state.go('member_home');
-                        $uibModalInstance.close();
-                }
 
-                $scope.logOut=function(){
-                    firebase.auth().signOut().then(function() {
-                      // Sign-out successful.
-                      console.log("sign out sucessful");
-                      $state.go("landing");
-                    }, function(error) {
-                      // An error happened.
-                      console.log("sign out error");
-                    });
+//         $scope.messages={};
+//         // firebase.auth().onAuthStateChanged(function(user) {
+//         //     if (user) {
+//         //        console.log("$rootScope firstName" + $rootScope.firstName);
+//         //         $scope.name = authorService;
 
-                }
+//         //         $scope.loginSubmit = function (){
+//         //                 $state.go('member_home');
+//         //                 $uibModalInstance.close();
+//         //         }
 
-                firebase.database().ref('messages').once('value').then(function(snapshot) {
-                    console.log("messages" + snapshot.val());
-                    $scope.messages=snapshot.val();
-                    // $scope.messagesTest=["test1", "test2"];
-                    $scope.$apply();
+//         //         $scope.logOut=function(){
+//         //             firebase.auth().signOut().then(function() {
+//         //               // Sign-out successful.
+//         //               console.log("sign out sucessful");
+//         //               $state.go("landing");
+//         //             }, function(error) {
+//         //               // An error happened.
+//         //               console.log("sign out error");
+//         //             });
 
-                });
+//         //         }
 
-            }else {
-                $state.go("landing");
+//         //         firebase.database().ref('messages').once('value').then(function(snapshot) {
+//         //             console.log("messages" + snapshot.val());
+//         //             $scope.messages=snapshot.val();
+//         //             // $scope.messagesTest=["test1", "test2"];
+//         //             $scope.$apply();
 
-            }
+//         //         });
+
+//         //     }else {
+//                 // $state.go("landing");
+
+//             // }
 
          
-        })
+//         // })
 
 
 
-        /* if ($rootScope.userIsLoggedIn===false){
-            $state.go("landing");
-        } else {
+//         /* if ($rootScope.userIsLoggedIn===false){
+//             $state.go("landing");
+//         } else {
 
-            console.log("$rootScope firstName" + $rootScope.firstName);
-            $scope.name = authorService;
+//             console.log("$rootScope firstName" + $rootScope.firstName);
+//             $scope.name = authorService;
 
-            $scope.loginSubmit = function (){
-                    $state.go('member_home');
-                    $uibModalInstance.close();
-            }
+//             $scope.loginSubmit = function (){
+//                     $state.go('member_home');
+//                     $uibModalInstance.close();
+//             }
 
-            $scope.logOut=function(){
-                firebase.auth().signOut().then(function() {
-                  // Sign-out successful.
-                  console.log("sign out sucessful");
-                  $state.go("landing");
-                }, function(error) {
-                  // An error happened.
-                  console.log("sign out error");
-                });
+//             $scope.logOut=function(){
+//                 firebase.auth().signOut().then(function() {
+//                   // Sign-out successful.
+//                   console.log("sign out sucessful");
+//                   $state.go("landing");
+//                 }, function(error) {
+//                   // An error happened.
+//                   console.log("sign out error");
+//                 });
 
-            }
+//             }
 
-        } */
+//         } */
 		
-    };
+//     };
 
     
 
 
-})();
+// })();

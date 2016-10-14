@@ -5,7 +5,7 @@
     angular.module('app').controller('LandingController', LandingController);
 
 
-    function LandingController($scope, $rootScope, authorService) {
+    function LandingController($scope, $rootScope, authorService, $state) {
     	console.log("$rootScope firstName" + $rootScope.firstName);
     	$scope.txtPassword = "";
     	$scope.txtEmail = "";
@@ -40,10 +40,12 @@
 		}
 
 		$scope.signIn = function(){
+			
 			firebase.auth().signInWithEmailAndPassword($scope.txtEmail, $scope.txtPassword)
 			.then(function(){
 				console.log("successful signup!");
 				$rootScope.userIsLoggedIn=true;
+
 			})
 			.catch(function(error) {
 			// Handle Errors here.
@@ -54,7 +56,6 @@
 
 			  // ...
 			});
-
 		}
 
 

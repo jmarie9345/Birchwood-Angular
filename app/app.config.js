@@ -19,15 +19,32 @@
                 controller: 'LandingController'
             })
             .state('dashboard', {
+                abstract: true,
                 url: "/dashboard",
-                templateUrl: "app/dashboard/dashboard.html",
-                controller: 'DashboardController'
+                templateUrl: "app/dashboard/dashboard.html"
+                // controller: 'DashboardController'
             })
-            .state('profile', {
+            .state('dashboard.main', {
+                url: "/main",
+                templateUrl: "app/dashboard/main/main.html",
+                controller: 'MainController'
+            })
+            .state('dashboard.profile', {
                 url: "/profile",
-                templateUrl: "app/profile/profile.html",
-                controller: 'profileController'
+                templateUrl: "app/dashboard/profile/profile.html",
+                controller: 'ProfileController'
             })
+            .state('dashboard.community', {
+                url: "/community",
+                templateUrl: "app/dashboard/community/community.html",
+                controller: 'CommunityController'
+            })            
+            // .state('profile', {
+            //     url: "/profile",
+            //     templateUrl: "app/profile/profile.html",
+            //     controller: 'profileController'
+            // })
+
             
 
     });

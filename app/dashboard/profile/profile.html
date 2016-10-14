@@ -1,51 +1,17 @@
-<!-- Sidebar Navigation -->
-<div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a >
-                Navigation 
-            </a>
-        </li>
-
-        <li>
-            <a href="#dashboard">Dashboard</a>
-        </li>
-        <li>
-            <a href="#messages">Messages</a>
-        </li>        
-        <li>
-            <a href="#account">Account</a>
-        </li>
-        <li>
-            <a href="#documents">Documents</a>
-        </li>
-       
-
-        <li>
-            <a href="#">Profile</a>
-        </li>
-        <li>
-            <a href="#">Community Bulletin Board</a>
-        </li>
-         <li>
-            <a ng-click="logOut()">log out</a>
-        </li>
-
-    </ul>
-</div>
-<!-- /#sidebar-wrapper -->
-
 <!-- profile picture -->
 <div class="container">
   <div class="row">
 
 
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-2 toppad" >
-   
+    
+        <pre>
+        {{profile | json}}
+        </pre> 
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">{{Resident Name}} <a style="text-align:right" href="edit.html">Edit Profile</a>       
+              <h3 class="panel-title">Resident Name <a style="text-align:right" href="edit.html">Edit Profile</a>       
               </h3>
 
             </div>
@@ -60,11 +26,11 @@
                     <tbody>
                       <tr>
                         <td>Lot #:</td>
-                        <td>140</td>
+                        <td>{{profile.lotNumber}}</td>
                       </tr>
                       <tr>
                         <td>Move in date:</td>
-                        <td>06/23/2013</td>
+                        <td>{{profile.moveInDate}}</td>
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
@@ -110,5 +76,4 @@
       </div>
     </div>
 
-
-
+ 

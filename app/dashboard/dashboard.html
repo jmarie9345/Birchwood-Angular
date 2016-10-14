@@ -11,24 +11,24 @@
         </li>
 
         <li>
-            <a href="#dashboard">Dashboard</a>
+            <a ui-sref="dashboard.main" ng-click="gotoAnchor('asdf')">Dashboard</a>
         </li>
         <li>
-            <a href="#">Messages</a>
+            <a ui-sref="dashboard.main" ng-click="gotoAnchor(2)">Messages</a>
         </li>        
         <li>
-            <a href="#account">Account</a>
+            <a ui-sref="dashboard.main" ng-click="gotoAnchor(3)">Account</a>
         </li>
         <li>
-            <a href="#documents">Documents</a>
+            <a ui-sref="dashboard.main" ng-click="gotoAnchor(4)">Documents</a>
         </li>
        
 
         <li>
-            <a href="app/profile/profile.html">Profile</a>
+            <a ui-sref="dashboard.profile" >Profile</a>
         </li>
         <li>
-            <a href="#">Community Bulletin Board</a>
+            <a ui-sref="dashboard.community" >Community Bulletin Board</a>
         </li>
          <li>
             <a ng-click="logOut()">log out</a>
@@ -43,146 +43,10 @@
 
 <!-- Page Content -->
 <div id="page-content-wrapper">
-    <div class="container-fluid">
 
-        <!-- Top Header-->
+        <div ui-view></div>
 
-        <div class="page-header">
-            <h1> Birchwood Estates West </h1>
-            <p>Welcome {{[client}}</p>
-        </div>
-        <!-- end top header -->
-
-<br> 
-
-
-        <!-- messages -->
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Messages</h3>
-          </div>
-          <div class="panel-body">
-            <div ng-repeat="(key, value) in messages"> 
-                                {{value}}
-            </div>
-          </div>
-        </div>
-        <!-- /messages -->
- 
-        <!-- Account -->
-
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Account</h3>
-          </div>
-
-          <div class="panel-body">
-
-        <!-- account status -->
-            <div class="container">
-            <h4> Account Status </h4>       
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-1">
-                        <i class="fa fa-dollar" style="font-size: 32pt;"></i> 
-                        <h4 style="display: inline-block"> Your current balance is [$X} </h4>
-
-                        </div>
-                        <div class="col-md-3">
-                        <button class="btn-danger btn-lg"> Make a Payment</button>
-                        </div>
-                    </div>
-            </div>
-            <br> <br>
-
-
-    <!-- payment history -->        
-            <div  class="container">
-            <h4>Payment History</h4>
-            <p>The following table reflects your payment history. Please note it can take 3-5 Business days for your payment to be reflected in the system</p>
-             <table class="table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Item</th>
-                    <th>Amount</th>
-                    <th>Payment</th>
-                    <th>Balance Due</th>
-                </tr>
-                </thead>
-                <tbody>
-                  <tr> <!-- should be imported from database -->
-                    <td>1/1/2017</td>
-                    <td>Monthly Rent</td>
-                    <td>$450</td>
-                    <td>-$450</td>
-                    <td>$0</td> <!-- should be a calculation -->
-                  </tr>
-                  <tr> <!-- should be imported from database -->
-                    <td>1/1/2017</td>
-                    <td>Monthly Rent</td>
-                    <td>$450</td>
-                    <td>-$450</td>
-                    <td>$0</td> <!-- should be a calculation -->
-                  </tr>
-                  <tr> <!-- should be imported from database -->
-                    <td>1/1/2017</td>
-                    <td>Monthly Rent</td>
-                    <td>$450</td>
-                    <td>-$450</td>
-                    <td>$0</td> <!-- should be a calculation -->
-                  </tr>
-                </tbody>
-              </table>
-            </div>  <!-- End #PaymentHistory-->
-         </div> <!-- end account panel body -->
-        </div> <!-- end account panel -->
-
-
-
-        <!-- Documents -->
-
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Documents</h3>
-              </div>
-          <div class="panel-body">
-
-
-        <div class="container" id="documents">
-
-        <button class="btn-info btn-lg"> Lease Agreement </button>
-        <button class="btn-info btn-lg"> Community Rules </button>
-        <button class="btn-info btn-lg"> Lawn/Snow Schedules </button>
-        <button class="btn-info btn-lg"> Service Providers </button>
-    
-        </div>
-
-        </div>
-
-
-<br> <br>
-        <!-- End Documents --> 
-
-        <!-- Community Bulletin Board -->
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Bulletin Board</h3>
-              </div>
-          <div class="panel-body">
-
-
-                <!-- for sale modal -->
-                
-                <button id="forSale"> For Sale </button>
-
-                <!-- / forsale Modal -->
-
-         </div> <!-- end bulletin board body -->
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
-    </div>
+</div>
     <!-- /#wrapper -->
 
   

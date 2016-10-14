@@ -1,0 +1,182 @@
+
+
+<h1>Main Page</h1>
+
+
+
+<!-- Page Content -->
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+
+        <!-- Top Header-->
+
+        <div class="page-header">
+            <h1> Birchwood Estates West </h1>
+            <p>Welcome {{client}}</p>
+        </div>
+        <!-- end top header -->
+
+<br> 
+
+
+        <!-- messages -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Messages</h3>
+          </div>
+          <pre>
+            {{messages | json}}
+          </pre>
+          <div class="panel-body">
+            <div ng-repeat="(key, value) in messages"> 
+                                {{value}}
+            </div>
+          </div>
+        </div>
+        <!-- /messages -->
+ 
+        <!-- Account -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Account</h3>
+          </div>
+          <pre>
+            {{payments | json}}
+          </pre>
+          <div class="panel-body">
+
+        <!-- account status -->
+            <div class="container">
+            <h4> Account Status </h4>       
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                        <i class="fa fa-dollar" style="font-size: 32pt;"></i> 
+                        <h4 style="display: inline-block"> Your current balance is {{globalBalance}} </h4>
+
+                        </div>
+                        <div class="col-md-3">
+                        <button class="btn-danger btn-lg"> Make a Payment</button>
+                        </div>
+                    </div>
+            </div>
+            <br> <br>
+
+
+    <!-- payment history -->        
+            <div  class="container">
+            <h4>Payment History</h4>
+            <p>The following table reflects your payment history. Please note it can take 3-5 Business days for your payment to be reflected in the system</p>
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Balance Due</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, value) in payments" ng-if="$index > 0">
+                    <td>{{value.date}}</td>
+                    <td>Monthly Rent</td>
+                    <td>${{value.amount}}FB</td>
+                    <td>${{value.amountPayed}}FB</td>
+                    <td>{{value.localBalance}}</td> 
+                </tr>
+                </tbody>
+              </table>
+            </div>  <!-- End #PaymentHistory-->
+         </div> <!-- end account panel body -->
+        </div> <!-- end account panel -->
+
+
+
+        <!-- Documents -->
+
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Documents</h3>
+              </div>
+          <div class="panel-body">
+
+
+        <div class="container" id="anchor1">
+
+        <a class="btn-info btn-lg anchor-button" href="https://mises.org/sites/default/files/Principles%20of%20Economics_5.pdf" download> Lease Agreement </a>
+        <a class="btn-info btn-lg anchor-button"> Community Rules </a>
+        <a class="btn-info btn-lg anchor-button"> Lawn/Snow Schedules </a>
+        <a class="btn-info btn-lg anchor-button"> Service Providers </a>
+    
+        </div>
+
+        </div>
+
+
+<br> <br>
+        <!-- End Documents --> 
+
+        <!-- Community Bulletin Board -->
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Bulletin Board</h3>
+              </div>
+          <div class="panel-body">
+
+
+                <!-- for sale modal -->
+                
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">For Sale</button>
+
+                <!-- / forsale Modal -->
+
+         </div> <!-- end bulletin board body -->
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+  
+
+   <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="itemName" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="itemName" ng-model="itemName" placeholder="item">
+    </div>
+    <pre>
+      {{itemName | json}}
+    </pre>
+  </div>
+  
+
+</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="sellItem()">Sell</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
