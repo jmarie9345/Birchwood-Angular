@@ -8,19 +8,32 @@
 
     function CommunityController($scope, $rootScope, authorService, $state) {
 
-
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-
-
-            }else {
-                $state.go("landing");
-
-            }
-
-        })
+        $scope.itemName = "";
+        // firebase.auth().onAuthStateChanged(function(user) {
+        //     if (user) {
 
 
+        //     }else {
+        //         $state.go("landing");
+
+        //     }
+
+        // })
+
+        firebase.database().ref('clients/client1/postings').once('value').then(function(snapshot) {
+                    console.log("postings: " + snapshot.val());
+                    var postings =snapshot.val();
+   
+
+        $scope.postings = postings;
+                    // $scope.messagesTest=["test1", "test2"];
+        $scope.$apply();
+
+        $scope.postItem=function(){
+
+            console.log("sending item for sale " + $scope.itemName)
+        }
+     })
     };
 
     

@@ -9,6 +9,17 @@
 
 }
 
+.btn {
+
+	height:50px;
+	width:150px;
+	vertical-align: top;
+	margin:10px;
+	text-align: center;
+	white-space: normal;
+
+}
+
 
 .fa-dollar {
     color:green;  

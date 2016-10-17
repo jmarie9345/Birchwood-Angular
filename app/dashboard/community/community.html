@@ -1,1 +1,132 @@
-<h1>Community Page</h1>
+
+
+   
+
+
+        <!-- Community Bulletin Board -->
+
+
+    <div class="panel panel-default">
+       <div class="panel-heading">
+          <div class="row">
+              <div class=" col-md-7 col-ld-7">
+                <h3 class="panel-title">Community Postings </h3>
+              </div>
+              <div class="col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3">
+	              <a data-toggle="modal" data-target="#myModal">Add Post</a>
+              </div>
+          </div>
+
+              </div>
+          <div class="panel-body">
+
+
+    <!-- Recent Postings -->        
+            <div  class="container">
+
+	          	<div class="row">
+				<label for="searchItem" class="col-sm-3 control-label">Search</label>
+	           	<input type="text" class="form-control" id="searchItem" placeholder="searchItem">
+				</div>
+
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Date Posted</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, value) in postings">
+                    <td>{{postings.name}}</td>
+                    <td>{{postings.type}}</td>
+                    <td>{{postings.description}}FB</td>
+                    <td>{{postings.date}}</td>
+                    <td> <button type="button">reply</button></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>  
+         </div> <!-- end bulletin board body -->
+        </div>
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Posting</h4>
+      </div>
+      <div class="modal-body">
+        
+		<form class="form-horizontal">
+		  <div class="form-group">
+
+		   	<div class="row">
+			    <label for="itemName" class="col-sm-3 control-label">Name</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="itemName" ng-model="itemName" placeholder="item">
+			    </div>
+		   	</div>
+
+ 			<div class="row">
+			    <label for="itemType" class="col-sm-3 control-label">Post Type</label>
+			   	<div class="col-sm-8">
+	  					<input id="forSale" type="checkbox" name="field" value="forSale">
+	  					<label for="forSale">For Sale</label>
+
+	  					<input id="helpNeeded" type="checkbox" name="field" value="helpNeeded">
+	  					<label for="helpNeeded">Help Needed/Offered</label>
+
+<br>
+	  					<input id="social" type="checkbox" name="field" value="social">
+	  					<label for="social">Social/Meet-Up</label>
+
+	  					<input id="Recommendations" type="checkbox" name="field" value="Recommendations">
+	  					<label for="Recommendations">Recommendations</label>
+
+				</div>
+			</div>
+
+			<div class="row">
+			    <label for="itemDesc" class="col-sm-3 col-lg-3 control-label">Description</label>
+			    <div class="col-sm-8 col-lg-8">
+			      <input type="text" class="form-control" id="itemDesc" ng-model="itemDesc" placeholder="itemDesc">
+			    </div>
+			</div>
+
+
+      <div class="row">
+          <label for="itemDesc" class="col-sm-3 col-lg-3 control-label">Date</label>
+          <div class="col-sm-8 col-lg-8">
+            <input type="date" class="form-control" id="date" ng-model="date" placeholder="date">
+          </div>
+      </div>
+<br>
+
+<!-- adds data to page
+		    <pre>
+		      {{itemName | json}}
+		    </pre>
+--> 
+		  </div>
+		  
+
+		</form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="postItem()">Post</button>
+      </div>
+    </div>
+  </div>
+</div>

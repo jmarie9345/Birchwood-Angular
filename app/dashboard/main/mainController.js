@@ -7,7 +7,7 @@
 /* first paramter is name of controller. second parameter is the function of the controller (noted below) */
 
     function MainController($scope, $rootScope, authorService, $state, $location, $anchorScroll) {
-        $scope.itemName = "";
+       
       // $scope.client = "Jackie";
       // $scope.gotoAnchor = function(x) {
       //   var newHash = 'anchor' + x;
@@ -87,10 +87,7 @@
 
          
         // })
-$scope.sellItem=function(){
 
-    console.log("sending item for sale " + $scope.itemName)
-}
 
  };
 

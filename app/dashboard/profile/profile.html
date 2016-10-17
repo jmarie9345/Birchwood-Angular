@@ -2,24 +2,35 @@
 <div class="container">
   <div class="row">
 
-
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-2 toppad" >
-    
+<!-- show firebase data on webpage
         <pre>
         {{profile | json}}
         </pre> 
+
+        --> 
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Resident Name <a style="text-align:right" href="edit.html">Edit Profile</a>       
-              </h3>
 
-            </div>
+              <div class="row">
+                <div class="panel-title col-md-8 col-lg-8"> {{profile.firstName}} {{profile.lastName}}
+                </div>
+
+                <div class="col-md-1 col-md-offset-3 col-lg-1 col-lg-offset-3" style="text-align:right;">    <a href="edit.html">Edit</a>    
+                </div>
+              </div>
+
+            </div> <!-- /panel-heading -->
+
+
+
+
+
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="" class="img-circle img-responsive">  <p> Upload Image </p> </div>
 
-
+          
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
@@ -34,31 +45,31 @@
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
-                        <td>Jane
-                        <br><br>Doe
-                        <br><br>Jackie</td>
+                        <td>{{profile.firstName}} {{profile.lastName}} <br>
+                        {{profile.residentName2}} <br>
+                        {{profile.residentName3}}</td>
                       </tr>
 
                       <tr>
                         <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)</td>
+                        <td>{{profile.phoneNum}} </td>
                       </tr>  
                       <tr>
                         <td>Email</td>
-                        <td><a href="mailto:info@support.com">TBD@TBD.com</a></td>
+                        <td>{{profile.email}} </td>
                       </tr>                      
                       <tr>
                         <td>Secondary Address</td>
-                        <td>Tampa, Florida</td>
+                        <td>{{profile.secAddress}} </td>
                       </tr>
                     
                       <tr>
                         <td>Emergency Contact Name</td>
-                        <td>Sally</td>
+                        <td>{{profile.emergencyContactName}} </td>
                       </tr>
                        <tr>
                         <td>Emergency Contact Number</td>
-                        <td>888-888-8888</td>
+                        <td>{{profile.emergencyContactNum}} </td>
                       </tr>              
              
                      
@@ -72,8 +83,8 @@
 
             
           </div>
-        </div>
-      </div>
-    </div>
+        </div> <!-- /row -->
+      </div> <!-- / container -->
+
 
  
