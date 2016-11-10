@@ -16,7 +16,7 @@
                 <div class="panel-title col-md-8 col-lg-8"> {{profile.firstName}} {{profile.lastName}}
                 </div>
 
-                <div class="col-md-1 col-md-offset-3 col-lg-1 col-lg-offset-3" style="text-align:right;">    <a href="edit.html">Edit</a>    
+                <div class="col-md-1 col-md-offset-3 col-lg-1 col-lg-offset-3" style="text-align:right;">    <a data-toggle="modal" data-target="#profileModal">Edit</a>    
                 </div>
               </div>
 
@@ -28,9 +28,11 @@
 
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="" class="img-circle img-responsive">  <p> Upload Image </p> </div>
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" ng-src="{{avatarURL}}" class="img-circle img-responsive">  
 
-          
+                <button type="file" style="color: #fff !important; background-color: #5cb85c !important; border-color: #4cae4c important;" ngf-select="uploadFiles($file, $invalidFiles)" accept="image/*" ngf-max-height="10000" ngf-max-size="10MB" class="btn btn-success">Upload Avatar</button>
+
+                </div>
                 
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
@@ -45,7 +47,7 @@
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
-                        <td>{{profile.firstName}} {{profile.lastName}} <br>
+                        <td>{{profile.residentName1}} <br>
                         {{profile.residentName2}} <br>
                         {{profile.residentName3}}</td>
                       </tr>
@@ -85,6 +87,83 @@
           </div>
         </div> <!-- /row -->
       </div> <!-- / container -->
+
+
+    <!-- Profile Edit Modal -->
+    <div class="modal" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Birchwood Estates West</h4>
+          </div>
+          <div class="modal-body" style="padding-top:0; padding-bottom:0;">
+        
+        <pre>
+        {{userEmail | json}}
+        {{residentName1 | json}}
+        </pre>
+    <!-- <div class="container"> -->
+        <div class="row">
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Lot #:</td>
+                        <td>  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                      </tr>
+                      <tr>
+                        <td>Move in date:</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                      </tr>
+                      <tr>
+                        <td>Resident Names:</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text" ng-model="residentName1"><br>
+                       <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"><br>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                      </tr>
+
+                      <tr>
+                        <td>Phone Number</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"> </td>
+                      </tr>  
+                      <tr>
+                        <td>Email</td>
+                        <td><input type="text" class="form-control" id="userEmail" placeholder="text" ng-model="userEmail"> </td>
+                      </tr>                      
+                      <tr>
+                        <td>Secondary Address</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"> </td>
+                      </tr>
+                    
+                      <tr>
+                        <td>Emergency Contact Name</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"> </td>
+                      </tr>
+                       <tr>
+                        <td>Emergency Contact Number</td>
+                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"> </td>
+                      </tr>              
+             
+                     
+                    </tbody>
+                  </table>
+                  
+                  <button class="btn btn-default" type="submit" ng-click="sendUpdatedUserInfo()">Update</button>
+
+                </div>
+        </div>
+    <!-- </div> -->
+
+
+
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 
  

@@ -7,6 +7,8 @@
         $rootScope.firstName="jackie";
         $rootScope.lastName="";
         $rootScope.userIsLoggedIn=false;
+        $rootScope.avatarURL = "";
+        $rootScope.currentUserID = "";
     })
     .config(function($stateProvider, $urlRouterProvider) {
 

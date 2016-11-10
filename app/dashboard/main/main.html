@@ -1,4 +1,6 @@
-
+<pre>
+{{userDashboardData | json}}
+</pre>
 
 <!-- Page Content -->
 <div id="page-content-wrapper">
@@ -8,7 +10,7 @@
 
         <div class="page-header">
             <h1> Birchwood Estates West </h1>
-            <p>Welcome {{profile.firstName}} {{profile.lastName}}</p>
+            <p>Welcome {{profile.resident1Name}}</p>
         </div>
         <!-- end top header -->
 
@@ -30,7 +32,7 @@
 -->
 
           <div class="panel-body">
-            <div ng-repeat="(key, value) in messages"> 
+            <div ng-repeat="(key, value) in userDashboardData.messages"> 
                                 {{value}}
             </div>
           </div>
@@ -59,7 +61,7 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-1">
                         <i class="fa fa-dollar" style="font-size: 22pt;"></i> 
-                        <h5 style="display: inline-block"> Your current balance is {{globalBalance}} </h5>
+                        <h5 style="display: inline-block"> Your current balance is {{userDashboardData.globalBalance}} </h5>
 
                         </div>
 
@@ -86,7 +88,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="(key, value) in payments" ng-if="$index > 0">
+                <tr ng-repeat="(key, value) in userDashboardData.payments" ng-if="$index > 0">
                     <td>{{value.date}}</td>
                     <td>Monthly Rent</td>
                     <td>${{value.amount}}FB</td>
@@ -114,20 +116,20 @@
 
           <div class="row">
             <div class="col-md-3 col-lg-3">
-                <a class="btn btn-default anchor-button" href="https://mises.org/sites/default/files/Principles%20of%20Economics_5.pdf" download> Lease Agreement </a>
+                <a class="btn-documents btn-default anchor-button" href="https://mises.org/sites/default/files/Principles%20of%20Economics_5.pdf" download> Lease Agreement </a>
             </div>
             <div class="col-md-3 col-lg-3">
-                <a class="btn btn-default anchor-button"> Community Rules </a>
+                <a class="btn-documents btn-default anchor-button"> Community Rules </a>
             </div>
 
             <div class="col-md-3 col-lg-3">
-                <a class="btn btn-default anchor-button"> Lawn/Snow Schedules </a>
+                <a class="btn-documents btn-default anchor-button"> Lawn/Snow Schedules </a>
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-3 col-lg-3">
-                <a class="btn btn-default   anchor-button"> Service Providers </a>
+                <a class="btn-documents btn-default anchor-button"> Service Providers </a>
             </div>
       
           </div>
@@ -137,11 +139,39 @@
         </div> <!-- /panel body -->
         </div> <!-- / panel default -->
 
-      <div class="panel panel-default">
-          <div class="panel-footer">
-          </div>
-      </div>
+
+
         <!-- End Documents --> 
+
+        <div class="panel panel-default">
+              <div class="panel-heading">
+                <pre>
+                {{userDashboardData.postings | json}}
+                </pre>
+                <h3 class="panel-title">my postings</h3>
+              </div>
+          <div class="panel-body">
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>description</th>
+                    <th>name</th>
+                    <th>post type</th>
+        
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, value) in userDashboardData.postings" >
+                    <td>{{value.description}}</td>
+                    <td>{{value.name}}</td>
+                    <td>{{value.postType}}</td>
+                </tr>
+                </tbody>
+              </table>
+
+          </div>
+
         </div>
         <!-- /#page-content-wrapper -->
     </div>

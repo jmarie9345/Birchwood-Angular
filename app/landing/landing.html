@@ -411,10 +411,10 @@
                     <form action="send_form_email.php" class="contact-form" name="contact-form" method="post">
                         <div class="row">
                             <div class="col-sm-6">
-                                <input type="text" name="name" required="required" placeholder="Name*">
+                                <input ng-model="contactName" type="text" name="name" required="required" placeholder="Name*">
                             </div>
                             <div class="col-sm-6">
-                                <input type="email" name="email" required="required" placeholder="Email*">
+                                <input ng-model="contactEmail" ttype="email" name="email" required="required" placeholder="Email*">
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" name="subject" placeholder="Subject">

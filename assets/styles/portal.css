@@ -1,15 +1,15 @@
 
 
 
-.btn-info {
+/*.btn-info {
 
 	height:100px;
 	width:200px;
 	vertical-align: top;
 
-}
+}*/
 
-.btn {
+.btn-documents {
 
 	height:50px;
 	width:150px;
@@ -66,5 +66,7 @@
 	width:160px;
 	border:solid;
 }
- 
+
+
+/* search */
 

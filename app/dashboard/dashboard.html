@@ -10,9 +10,31 @@
             </a>
         </li>
 
-        <li>
+
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dashboard
+            <span class="caret"></span>
+            </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+                <li>
+                    <a ui-sref="dashboard.main" ng-click="gotoAnchor(2)">Messages</a>
+                </li>        
+                <li>
+                    <a ui-sref="dashboard.main" ng-click="gotoAnchor(3)">Account</a>
+                </li>
+                <li>
+                    <a ui-sref="dashboard.main" ng-click="gotoAnchor(4)">Documents</a>
+                </li>
+       
+                </ul>
+        </div>
+
+<!--         <li>
             <a ui-sref="dashboard.main" ng-click="gotoAnchor('asdf')">Dashboard</a>
-        </li>
+        </li> -->
         <li>
             <a ui-sref="dashboard.main" ng-click="gotoAnchor(2)">Messages</a>
         </li>        
@@ -23,7 +45,6 @@
             <a ui-sref="dashboard.main" ng-click="gotoAnchor(4)">Documents</a>
         </li>
        
-
         <li>
             <a ui-sref="dashboard.profile" >Profile</a>
         </li>

@@ -12,6 +12,9 @@
 
     	$scope.name = authorService;
 
+    	$scope.contactName = "";	
+    	$scope.contactEmail = "";
+
         $scope.map = { center: { latitude: 43.033980, longitude: -82.464194 }, zoom: 14 };
     
 		$scope.marker = {
@@ -39,7 +42,22 @@
 		      }
 		}
 
-		$scope.signIn = function(){
+		$scope.sendEmail = function() {
+
+			var fromEmail = "birchwoodestateswest@yahoo.com";
+			var toEmail = ""
+			var messageBody = "Hi, you have a new message from Birchwood-Estates-West.com"  
+
+			Email.send("from@you.com",
+				$scope.contactEmail,
+				"This is a subject",
+				"this is the body",
+				"smtp.yourisp.com",
+				"username",
+				"password");
+		}
+
+ 		$scope.signIn = function(){
 			
 			firebase.auth().signInWithEmailAndPassword($scope.txtEmail, $scope.txtPassword)
 			.then(function(){
