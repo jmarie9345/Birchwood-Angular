@@ -44,15 +44,15 @@
 
 		$scope.sendEmail = function() {
 
-			var fromEmail = "birchwoodestateswest@yahoo.com";
+			var fromEmail = "jmarie9345@gmail.com";
 			var toEmail = ""
 			var messageBody = "Hi, you have a new message from Birchwood-Estates-West.com"  
 
-			Email.send("from@you.com",
+			Email.send("jmarie9345@gmail.com.com",
 				$scope.contactEmail,
-				"This is a subject",
-				"this is the body",
-				"smtp.yourisp.com",
+				"Birchwood Estates West Inquiry",
+				$scope.contactName,
+				"Birchwood-Estates-West.com",
 				"username",
 				"password");
 		}

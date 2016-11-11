@@ -62,9 +62,9 @@
                     
                     if (key !== "currentBalance"){
                         
-                        var amount = payments[key].amount;
-                        var amountPayed = payments[key].amountPayed;
-                        var localBalance =  $scope.globalBalance + ( amount - amountPayed);
+                        var amountDue = payments[key].amountDue;
+                        var amountPaid = payments[key].amountPaid;
+                        var localBalance =  $scope.globalBalance + ( amountDue - amountPaid);
                         $scope.userDashboardData.globalBalance = localBalance;
                         payments[key]["localBalance"] = localBalance;
                         console.log("key: " + key)

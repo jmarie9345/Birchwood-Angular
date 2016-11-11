@@ -12,9 +12,9 @@
         //     if (user) {
         var storageRef = firebase.storage().ref();
 
-        firebase.database().ref('clients/client1/userInfo').once('value').then(function(snapshot) {
-            console.log("profile" + snapshot.val());
-            $scope.profile =snapshot.val();
+        firebase.database().ref("clients/" + user.uid + "/userInfo").once('value').then(function(snapshot) {
+            console.log("userInfo" + snapshot.val());
+            $scope.profile.userInfo =snapshot.val();
             // $scope.messagesTest=["test1", "test2"];
             $scope.$apply();
 
@@ -22,7 +22,7 @@
 
         $scope.sendUpdatedUserInfo = function() {
 
-             firebase.database().ref('clients/client1/userInfo').set({
+             firebase.database().ref("clients/" + user.uid + "/userInfo").set({
                 resident1Name: $scope.resident1Name,
                 email: $scope.email,
             });

@@ -2,18 +2,18 @@
 <div class="container">
   <div class="row">
 
-<!-- show firebase data on webpage
+show firebase data on webpage
         <pre>
         {{profile | json}}
         </pre> 
 
-        --> 
+        
    
           <div class="panel panel-info">
             <div class="panel-heading">
 
               <div class="row">
-                <div class="panel-title col-md-8 col-lg-8"> {{profile.firstName}} {{profile.lastName}}
+                <div class="panel-title col-md-8 col-lg-8"> {{profile.firstName}} {{profile.resident1Name}}
                 </div>
 
                 <div class="col-md-1 col-md-offset-3 col-lg-1 col-lg-offset-3" style="text-align:right;">    <a data-toggle="modal" data-target="#profileModal">Edit</a>    
@@ -47,9 +47,9 @@
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
-                        <td>{{profile.residentName1}} <br>
-                        {{profile.residentName2}} <br>
-                        {{profile.residentName3}}</td>
+                        <td>{{profile.resident1Name}} <br>
+                        {{profile.resident2Name}} <br>
+                        {{profile.resident3Name}}</td>
                       </tr>
 
                       <tr>
