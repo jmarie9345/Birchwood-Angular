@@ -8,19 +8,42 @@
 
     function ProfileController($scope, $rootScope, authorService, $state, Upload, $timeout) {
 
-        // firebase.auth().onAuthStateChanged(function(user) {
-        //     if (user) {
-        var storageRef = firebase.storage().ref();
 
-        firebase.database().ref("clients/" + user.uid + "/userInfo").once('value').then(function(snapshot) {
-            console.log("userInfo" + snapshot.val());
-            $scope.profile.userInfo =snapshot.val();
-            // $scope.messagesTest=["test1", "test2"];
-            $scope.$apply();
+        $scope.sendUpdatedUserInfo = sendUpdatedUserInfo;
+        $scope.uploadFiles = uploadFiles;
+        $scope.profile = {
+            userInfo: {}
+        }
 
-        });
+        init();
 
-        $scope.sendUpdatedUserInfo = function() {
+        function init() {
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+
+                    setupUserInformation(user);
+
+                 }  else {
+                     $state.go("landing");
+                 }  
+
+             });
+        }
+
+        function setupUserInformation(user) {
+
+            firebase.database().ref("clients/" + user.uid + "/userInfo").once('value').then(function(snapshot) {
+                console.log("userInfo" + snapshot.val());
+                debugger;
+                $scope.profile.userInfo =snapshot.val();
+                // $scope.messagesTest=["test1", "test2"];
+                $scope.$apply();
+            });
+        }
+
+
+        function sendUpdatedUserInfo() {
 
              firebase.database().ref("clients/" + user.uid + "/userInfo").set({
                 resident1Name: $scope.resident1Name,
@@ -28,7 +51,10 @@
             });
         }
 
-        $scope.uploadFiles = function(file, errFiles) {
+        function uploadFiles(file, errFiles) {
+
+            var storageRef = firebase.storage().ref();
+
             // $scope.f = file;
             $scope.errFile = errFiles && errFiles[0];
             if (file) {
@@ -78,14 +104,6 @@
             }   
         } 
 
-            // }else {
-            //     $state.go("landing");
-
-            // }
-
-        // })
-		
     };
-
 
 })();

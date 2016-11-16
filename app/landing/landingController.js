@@ -12,6 +12,9 @@
 
     	$scope.name = authorService;
 
+    	$scope.sendEmail = sendEmail;
+    	$scope.signIn = signIn
+
     	$scope.contactName = "";	
     	$scope.contactEmail = "";
 
@@ -42,22 +45,9 @@
 		      }
 		}
 
-		$scope.sendEmail = function() {
 
-			var fromEmail = "jmarie9345@gmail.com";
-			var toEmail = ""
-			var messageBody = "Hi, you have a new message from Birchwood-Estates-West.com"  
 
-			Email.send("jmarie9345@gmail.com.com",
-				$scope.contactEmail,
-				"Birchwood Estates West Inquiry",
-				$scope.contactName,
-				"Birchwood-Estates-West.com",
-				"username",
-				"password");
-		}
-
- 		$scope.signIn = function(){
+ 		function signIn(){
 			
 			firebase.auth().signInWithEmailAndPassword($scope.txtEmail, $scope.txtPassword)
 			.then(function(){

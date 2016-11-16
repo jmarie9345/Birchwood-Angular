@@ -11,6 +11,7 @@
 
         // $scope.globalBalance = 0;
         // $scope.postings={};
+        $scope.payment = payment;
 
         $scope.userDashboardData = {
 
@@ -26,15 +27,33 @@
 
         function init() {
 
-            //load global messages
-            loadGlobalMessageFromFirebase();
+            debugger;
 
-            //load payments 
-            loadPaymentsFromFirebase();
+            firebase.auth().onAuthStateChanged(function(user) {
 
-            //load postings 
-            loadPostingsFromFirebase();
+                if(user) {
 
+                    //load global messages
+                    loadGlobalMessageFromFirebase();
+
+                    //load payments 
+                    loadPaymentsFromFirebase();
+
+                    //load postings 
+                    loadPostingsFromFirebase();
+
+                } else {
+                    $state.go("landing");
+                }
+
+            });
+
+
+        }
+
+        function payment(amount, whoToPay) {
+            //Venmo API setup
+            //Call to send payment
         }
  
         function loadGlobalMessageFromFirebase() {

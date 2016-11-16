@@ -408,13 +408,46 @@
                 
                 </div>
                 <div class="col-sm-7 col-sm-offset-1">
-                    <form action="send_form_email.php" class="contact-form" name="contact-form" method="post">
+
+
+<form id="myform" onsubmit="emailjs.sendForm('default_service', 'birchwood_estates_inquiry', this); return false;" method="post">
+<label>reply_to</label>
+<input type="text" name="reply_to" />
+<label>contactName</label>
+<input type="text" name="contactName" />
+<label>from_name</label>
+<input type="text" name="from_name" />
+<label>message_html</label>
+<input type="text" name="message_html" />
+<label>contactEmail</label>
+<input type="text" name="contactEmail" />
+<br><br>
+<button>
+Send
+</button>
+</form>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_0XBGTmAiVLVuR2MGirqyv");
+   })();
+</script>
+
+
+
+
+
+
+
+
+<!--                     <form class="contact-form" name="contact-form" method="post">
                         <div class="row">
                             <div class="col-sm-6">
                                 <input ng-model="contactName" type="text" name="name" required="required" placeholder="Name*">
                             </div>
                             <div class="col-sm-6">
-                                <input ng-model="contactEmail" ttype="email" name="email" required="required" placeholder="Email*">
+                                <input ng-model="contactEmail" type="email" name="email" required="required" placeholder="Email*">
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" name="subject" placeholder="Subject">
@@ -429,7 +462,8 @@
                                 <input type="submit" name="submit" value="Send Message" class="btn btn-send" ng-click="sendEmail()">
                             </div>
                         </div>
-                    </form>
+                    </form> -->
+
                 </div>
             </div>
         </div>
