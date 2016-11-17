@@ -410,59 +410,20 @@
                 <div class="col-sm-7 col-sm-offset-1">
 
 
-<form id="myform" onsubmit="emailjs.sendForm('default_service', 'birchwood_estates_inquiry', this); return false;" method="post">
-<label>reply_to</label>
-<input type="text" name="reply_to" />
-<label>contactName</label>
-<input type="text" name="contactName" />
-<label>from_name</label>
-<input type="text" name="from_name" />
-<label>message_html</label>
-<input type="text" name="message_html" />
-<label>contactEmail</label>
-<input type="text" name="contactEmail" />
-<br><br>
-<button>
-Send
-</button>
-</form>
+                <form id="contactForm" onsubmit="emailjs.sendForm('gmail', 'birchwood_estates_inquiry', this); return false;" method="post" class="contact-form">
+                    <label>Contact Name</label>
+                    <input type="text" name="contactName" ng-model="user.contactName" />
+                    <label>Message</label>
+                    <input type="text" name="message_html" ng-model="user.message_html"/>
+                    <label>Phone</label>
+                    <input type="text" name="contactPhone" ng-model="user.contactPhone"/>
+                    <label>Contact Email</label>
+                    <input type="text" name="contactEmail" ng-model="user.contactEmail"/>
+                    <br><br>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_0XBGTmAiVLVuR2MGirqyv");
-   })();
-</script>
+                    <button  ng-click="reset()"> Submit </button>
+                </form>
 
-
-
-
-
-
-
-
-<!--                     <form class="contact-form" name="contact-form" method="post">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input ng-model="contactName" type="text" name="name" required="required" placeholder="Name*">
-                            </div>
-                            <div class="col-sm-6">
-                                <input ng-model="contactEmail" type="email" name="email" required="required" placeholder="Email*">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" name="subject" placeholder="Subject">
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="text" name="Phone Number" placeholder="Phone Number">
-                            </div>
-                            <div class="col-sm-12">
-                                <textarea name="message" required="required" cols="30" rows="7" placeholder="Message*"></textarea>
-                            </div>
-                            <div class="col-sm-12">
-                                <input type="submit" name="submit" value="Send Message" class="btn btn-send" ng-click="sendEmail()">
-                            </div>
-                        </div>
-                    </form> -->
 
                 </div>
             </div>

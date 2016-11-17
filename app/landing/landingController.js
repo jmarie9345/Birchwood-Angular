@@ -11,12 +11,11 @@
     	$scope.txtEmail = "";
 
     	$scope.name = authorService;
-
-    	$scope.sendEmail = sendEmail;
     	$scope.signIn = signIn
 
     	$scope.contactName = "";	
     	$scope.contactEmail = "";
+   
 
         $scope.map = { center: { latitude: 43.033980, longitude: -82.464194 }, zoom: 14 };
     
@@ -45,7 +44,7 @@
 		      }
 		}
 
-
+		$scope.reset = reset;
 
  		function signIn(){
 			
@@ -66,6 +65,12 @@
 			});
 		}
 
+
+      function reset() {
+        $scope.user = angular.copy($scope.master);
+      };
+
+      $scope.reset();
 
 	}
 
