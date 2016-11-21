@@ -13,7 +13,7 @@ show firebase data on webpage
             <div class="panel-heading">
 
               <div class="row">
-                <div class="panel-title col-md-8 col-lg-8"> {{profile.firstName}} {{profile.resident1Name}}
+                <div class="panel-title col-md-8 col-lg-8"> {{profile.userInfo.resident1Name}}
                 </div>
 
                 <div class="col-md-1 col-md-offset-3 col-lg-1 col-lg-offset-3" style="text-align:right;">    <a data-toggle="modal" data-target="#profileModal">Edit</a>    
@@ -39,17 +39,17 @@ show firebase data on webpage
                     <tbody>
                       <tr>
                         <td>Lot #:</td>
-                        <td>{{profile.lotNumber}}</td>
+                        <td>{{profile.userInfo.lotNumber}}</td>
                       </tr>
                       <tr>
                         <td>Move in date:</td>
-                        <td>{{profile.moveInDate}}</td>
+                        <td>{{profile.userInfo.moveInDate}}</td>
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
-                        <td>{{profile.resident1Name}} <br>
-                        {{profile.resident2Name}} <br>
-                        {{profile.resident3Name}}</td>
+                        <td>{{profile.userInfo.resident1Name}} <br>
+                        {{profile.userInfo.resident2Name}} <br>
+                        {{profile.userInfo.resident3Name}}</td>
                       </tr>
 
                       <tr>
@@ -58,20 +58,20 @@ show firebase data on webpage
                       </tr>  
                       <tr>
                         <td>Email</td>
-                        <td>{{profile.email}} </td>
+                        <td>{{profile.userInfo.email}} </td>
                       </tr>                      
                       <tr>
                         <td>Secondary Address</td>
-                        <td>{{profile.secAddress}} </td>
+                        <td>{{profile.userInfo.secondaryAddress}} </td>
                       </tr>
                     
                       <tr>
                         <td>Emergency Contact Name</td>
-                        <td>{{profile.emergencyContactName}} </td>
+                        <td>{{profile.userInfo.emergencyContactName}} </td>
                       </tr>
                        <tr>
                         <td>Emergency Contact Number</td>
-                        <td>{{profile.emergencyContactNum}} </td>
+                        <td>{{profile.userInfo.emergencyContactNumber}} </td>
                       </tr>              
              
                      
@@ -110,17 +110,19 @@ show firebase data on webpage
                     <tbody>
                       <tr>
                         <td>Lot #:</td>
-                        <td>  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                        <td>  <input type="text" class="form-control" id="profile.userInfo.lotNumber" placeholder={{profile.userInfo.lotNumber}}></td>
                       </tr>
                       <tr>
                         <td>Move in date:</td>
-                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                        <td><input type="text" class="form-control" id="profile.userInfo.moveInDate" placeholder={{profile.userInfo.moveInDate}}></td>
                       </tr>
                       <tr>
                         <td>Resident Names:</td>
-                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text" ng-model="residentName1"><br>
-                       <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"><br>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"></td>
+                          <td>
+                          <input type="text" class="form-control" id="profile.userInfo.resident1Name" placeholder={{profile.userInfo.resident1Name}} ng-model="resident1Name"><br>
+                          <input type="text" class="form-control" id="profile.userInfo.resident2Name" placeholder={{profile.userInfo.resident2Name}}><br>
+                          <input type="text" class="form-control" id="profile.userInfo.resident3Name" placeholder={{profile.userInfo.resident3Name}}>
+                          </td>
                       </tr>
 
                       <tr>
@@ -133,7 +135,7 @@ show firebase data on webpage
                       </tr>                      
                       <tr>
                         <td>Secondary Address</td>
-                        <td><input type="text" class="form-control" id="exampleInputEmail1" placeholder="text"> </td>
+                        <td><input type="text" class="form-control" id="secondaryAddress" placeholder="text"> </td>
                       </tr>
                     
                       <tr>

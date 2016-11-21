@@ -6,9 +6,11 @@
 
 /* first paramter is name of controller. second parameter is the function of the controller (noted below) */
 
-    function CommunityController($scope, $rootScope, authorService, $state) {
+    CommunityController.$inject = ['$scope', '$rootScope', 'GlobalService', '$state'];
 
-        $scope.postItem = postitem;
+    function CommunityController($scope, $rootScope, GlobalService, $state) {
+
+        $scope.postItem = postItem;
 
         $scope.postingItem = {};
           $scope.postingItem.name = "";

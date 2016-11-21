@@ -6,7 +6,7 @@
 
 /* first paramter is name of controller. second parameter is the function of the controller (noted below) */
 
-    function ProfileController($scope, $rootScope, authorService, $state, Upload, $timeout) {
+    function ProfileController($scope, $rootScope, GlobalService, $state, Upload, $timeout) {
 
 
         $scope.sendUpdatedUserInfo = sendUpdatedUserInfo;
@@ -33,17 +33,25 @@
 
         function setupUserInformation(user) {
 
-            firebase.database().ref("clients/" + user.uid + "/userInfo").once('value').then(function(snapshot) {
-                console.log("userInfo" + snapshot.val());
-                debugger;
-                $scope.profile.userInfo =snapshot.val();
-                // $scope.messagesTest=["test1", "test2"];
+            // firebase.database().ref("clients/" + user.uid + "/userInfo").once('value').then(function(snapshot) {
+            //     console.log("userInfo" + snapshot.val());
+            //     debugger;
+            //     $scope.profile.userInfo =snapshot.val();
+            //     // $scope.messagesTest=["test1", "test2"];
+            //     $scope.$apply();
+            // });
+            GlobalService.setupUserProfile(user).then(function(userProfileData) {
+                
+                $scope.profile.userInfo = userProfileData;
                 $scope.$apply();
+            
+            }).catch(function(error) {
+
             });
         }
 
 
-        function sendUpdatedUserInfo() {
+        function sendUpdatedUserInfo(user) {
 
              firebase.database().ref("clients/" + user.uid + "/userInfo").set({
                 resident1Name: $scope.resident1Name,

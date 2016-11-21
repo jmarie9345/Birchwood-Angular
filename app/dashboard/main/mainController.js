@@ -6,7 +6,7 @@
 
 /* first paramter is name of controller. second parameter is the function of the controller (noted below) */
 
-    function MainController($scope, $rootScope, authorService, $state, $location, $anchorScroll) {
+    function MainController($scope, $rootScope, GlobalService, $state, $location, $anchorScroll) {
 
 
         // $scope.globalBalance = 0;

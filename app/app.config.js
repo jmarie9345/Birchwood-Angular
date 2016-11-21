@@ -9,6 +9,7 @@
         $rootScope.userIsLoggedIn=false;
         $rootScope.avatarURL = "";
         $rootScope.currentUserID = "";
+        $rootScope.commonPath = "clients/";
     })
     .config(function($stateProvider, $urlRouterProvider) {
 
