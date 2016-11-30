@@ -6,13 +6,13 @@
 
         var name = "Jackie";
 
-        function setupUserProfile(user) {
+        function setupUserData(user, pathToData) {
 
 			var deferred = $q.defer();
         	
         	var commonUserPathURL = "clients/" + user.uid;
             
-            firebase.database().ref(commonUserPathURL+ "/userInfo").once('value').then(function(snapshot) {
+            firebase.database().ref(commonUserPathURL + "/" + pathToData).once('value').then(function(snapshot) {
                 
                 console.log('I got your user profile data');
                 //Success
@@ -34,7 +34,7 @@
 
 
         return { 
-        	setupUserProfile: setupUserProfile,
+        	setupUserData: setupUserData,
         	updatePayments: updatePayments};
 
     });

@@ -30,7 +30,7 @@
             debugger;
 
             firebase.auth().onAuthStateChanged(function(user) {
-
+debugger;
                 if(user) {
 
                     //load global messages
@@ -72,11 +72,10 @@
 
             var user = firebase.auth().currentUser;
 
-            firebase.database().ref("clients/" + user.uid + "/payments").once('value').then(function(snapshot) {
-                console.log("payments: " + snapshot.val());
+            GlobalService.setupUserData(user, "payments").then(function(payments) {
                 
-                var payments =snapshot.val();
-                
+                debugger;
+
                 for(var key in payments) {
                     
                     if (key !== "currentBalance"){
@@ -97,20 +96,23 @@
 
                 $scope.$apply();
 
+            
+            }).catch(function(error) {
+
             });
+
         }
 
         function loadPostingsFromFirebase() {
 
             var user = firebase.auth().currentUser;
 
-            firebase.database().ref("clients/" + user.uid + "/postings").once('value').then(function(snapshot) {
-                
-                $scope.userDashboardData.postings = snapshot.val();
-        
+             GlobalService.setupUserData(user, "postings").then(function(postings){
+                $scope.userDashboardData.postings = postings;
                 $scope.$apply();
 
-            });
+             }
+
 
         }
 

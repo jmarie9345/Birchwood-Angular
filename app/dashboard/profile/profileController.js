@@ -40,7 +40,7 @@
             //     // $scope.messagesTest=["test1", "test2"];
             //     $scope.$apply();
             // });
-            GlobalService.setupUserProfile(user).then(function(userProfileData) {
+            GlobalService.setupUserData(user, "userInfo").then(function(userProfileData) {
                 
                 $scope.profile.userInfo = userProfileData;
                 $scope.$apply();

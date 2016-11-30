@@ -15,7 +15,7 @@
     	$scope.txtPassword = "";
     	$scope.txtEmail = "";
     	$scope.name = GlobalService;
-    	$scope.signIn = signIn
+    	$scope.signIn = signIn;
     	$scope.contactUsForm = {
     		contactName: "",
     		contactEmail: "",
@@ -70,7 +70,7 @@
 			      }
 			}
 
-			GlobalService.updateUserProfile();
+			// GlobalService.updateUserProfile();
 	   	}	
 
  		function signIn(){

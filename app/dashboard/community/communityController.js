@@ -124,6 +124,15 @@
           };
 
           function getDayClass(data) {
+
+            var data= {
+              date: {},
+              mode: ""
+            };
+
+            data.date = new Date();
+            data.mode = "day";
+
             var date = data.date,
               mode = data.mode;
             if (mode === 'day') {
