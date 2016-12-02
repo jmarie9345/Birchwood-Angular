@@ -1,6 +1,7 @@
 (function() {
 
     'use strict';
+    /* configurng the app with a service (AKA factory) */ 
 
     angular.module('app').factory('GlobalService', function($q) {
 

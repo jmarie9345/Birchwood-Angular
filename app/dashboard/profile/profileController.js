@@ -19,16 +19,29 @@
 
         function init() {
 
-            firebase.auth().onAuthStateChanged(function(user) {
-                if (user) {
+            //check connection
+                //if true and local storage (browser) is empty
+                    //retrieve data from firebase
+                //if true and local storage is not empty
+                    //retrieeve from local storage
+                //if false
+                    //retrieve from local storage
 
-                    setupUserInformation(user);
+             if ($rootScope.connectionState === true) {
+                firebase.auth().onAuthStateChanged(function(user) {
+                    if (user) {
 
-                 }  else {
-                     $state.go("landing");
-                 }  
+                        setupUserInformation(user);
 
-             });
+                     }  else {
+                         $state.go("landing");
+                     }  
+
+                 });
+
+             } else {
+                /* display message showing disconnected */
+             }
         }
 
         function setupUserInformation(user) {

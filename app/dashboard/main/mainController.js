@@ -111,7 +111,7 @@ debugger;
                 $scope.userDashboardData.postings = postings;
                 $scope.$apply();
 
-             }
+             });
 
 
         }

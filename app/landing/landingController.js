@@ -2,9 +2,10 @@
 
     'use strict';
 
+/* .controller creates the controller for the app */
     angular.module('app').controller('LandingController', LandingController);
 
-
+/* dependencies (services) are injected into the controller - ie $scope*/
     function LandingController($scope, $rootScope, GlobalService, $state) {
     	
     	console.log("$rootScope firstName" + $rootScope.firstName);
@@ -12,6 +13,8 @@
    		/*********************************
 		SCOPE VARIABLES
 		*********************************/
+
+		/* declare all varibales to prevent breaking. instead it will just show a blank */
     	$scope.txtPassword = "";
     	$scope.txtEmail = "";
     	$scope.name = GlobalService;
